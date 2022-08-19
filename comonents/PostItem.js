@@ -12,8 +12,8 @@ import {
 const PostItem = () => {
   return (
     <>
+      <SectionNavStyle>Latest</SectionNavStyle>
       <PostStyle>
-        <SectionNavStyle>Latest</SectionNavStyle>
         <section>
           <article>
             <div>

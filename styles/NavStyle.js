@@ -11,7 +11,7 @@ export const NavContainer = styled.div`
   @media ${devices.tablet} {
     border: 1px solid var(--primary-color);
     height: fit-content;
-    top: 80vh;
+    top: 75vh;
     bottom: 0;
   }
 `;

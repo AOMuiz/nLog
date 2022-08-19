@@ -19,7 +19,7 @@ const Nav = () => {
           </li>
           <li>
             <AiOutlineTag />
-            <span>Tag</span>
+            <span>Tags</span>
           </li>
         </ul>
       </NavStyles>

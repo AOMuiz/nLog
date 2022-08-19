@@ -15,9 +15,9 @@ export const PostStyle = styled.div`
 
 export const SectionNavStyle = styled.h3`
   margin-left: 3rem;
-  font-size: 20px;
+  font-size: 1.3rem;
   color: var(--default);
-  line-height: 25px;
+  line-height: 1.5rem;
   border-top: 2px solid var(--primary-color);
   font-weight: 400;
   display: inline-block;
