@@ -42,16 +42,16 @@ export const PostTitle = styled.p`
   font-weight: 400;
   font-size: 2rem;
   line-height: 44px;
-  /* clamp */
-  position: relative;
-  max-height: calc(var(--lh) * var(--max-lines));
-  overflow: hidden;
-  padding-right: 1rem;
 `;
 
 export const PostContent = styled.h3`
   font-size: 15px;
   font-weight: 400;
+  /* clamp */
+  position: relative;
+  max-height: calc(var(--lh) * var(--max-lines));
+  overflow: hidden;
+  padding-right: 1rem;
 `;
 
 export const PostTagStyle = styled.ul`

@@ -4,8 +4,9 @@ export const NavContainer = styled.div`
   background-color: var(--main-bg-color);
   border-right: 1px solid var(--primary-color);
   height: 100vh;
-  /* position: fixed;
-  top: 0; */
+  padding-inline: 2rem;
+  position: fixed;
+  top: 0;
 `;
 
 export const NavStyles = styled.div`

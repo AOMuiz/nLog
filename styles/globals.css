@@ -9,7 +9,9 @@
   --default: #ffffff;
   --heading-font: "DM Serif Display", serif;
   --body-font: "Lexend Deca", serif;
-  --max-lines: 3;
+  --max-lines: 5;
+  --lh: 1.4rem;
+  line-height: var(--lh);
 }
 
 html,
