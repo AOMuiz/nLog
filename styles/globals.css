@@ -1,9 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Lexend+Deca:wght@100;400;500&display=swap");
+
+/* font-family: 'DM Serif Display', serif; */
+
+:root {
+  --main-bg-color: #272727;
+  --primary-color: #6eeb83;
+  --secondary-color: #a5a5a5;
+  --default: #ffffff;
+  --heading-font: "DM Serif Display", serif;
+  --body-font: "Lexend Deca", serif;
+  --max-lines: 3;
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: var(--body-font);
+  background-color: var(--main-bg-color);
 }
 
 a {
