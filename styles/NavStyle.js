@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { devices } from ".";
 
 export const NavContainer = styled.div`
   background-color: var(--main-bg-color);
@@ -7,6 +8,12 @@ export const NavContainer = styled.div`
   padding-inline: 2rem;
   position: fixed;
   top: 0;
+  @media ${devices.tablet} {
+    border: 1px solid var(--primary-color);
+    height: fit-content;
+    top: 80vh;
+    bottom: 0;
+  }
 `;
 
 export const NavStyles = styled.div`
@@ -14,6 +21,10 @@ export const NavStyles = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  @media ${devices.tablet} {
+    flex-direction: row;
+    justify-content: space-around;
+  }
   p {
     background-color: var(--primary-color);
     width: 3rem;
@@ -32,14 +43,22 @@ export const NavStyles = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* display: inline; */
     padding: 0px;
+    @media ${devices.tablet} {
+      flex-direction: row;
+      justify-content: space-between;
+    }
     li {
       margin: 20px 0px;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      @media ${devices.tablet} {
+        flex-direction: row;
+        justify-content: space-between;
+        padding-inline: 0.5rem;
+      }
     }
     svg {
       color: var(--primary-color);

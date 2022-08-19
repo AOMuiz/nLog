@@ -1,13 +1,5 @@
 import styled from "styled-components";
-
-export const SectionNavStyle = styled.h3`
-  font-size: 20px;
-  color: var(--default);
-  line-height: 25px;
-  border-top: 2px solid var(--primary-color);
-  font-weight: 400;
-  display: inline-block;
-`;
+import { devices } from ".";
 
 export const PostStyle = styled.div`
   margin: 1.5rem 3rem;
@@ -21,18 +13,31 @@ export const PostStyle = styled.div`
   }
 `;
 
+export const SectionNavStyle = styled.h3`
+  margin-left: 3rem;
+  font-size: 20px;
+  color: var(--default);
+  line-height: 25px;
+  border-top: 2px solid var(--primary-color);
+  font-weight: 400;
+  display: inline-block;
+`;
+
 export const PostDate = styled.p`
   font-size: 2rem;
   font-weight: 500;
   text-align: right;
   line-height: 40px;
+  /* margin-bottom: 14px; */
 `;
 
 export const PostAuthor = styled.p`
   font-weight: 300;
-  font-size: 1rem;
+  font-size: 1.2rem;
   transform: rotate(-90deg);
   padding: 1.5rem 2px;
+  text-align: right;
+  line-height: 20px;
 `;
 
 export const PostTitle = styled.p`
@@ -42,6 +47,7 @@ export const PostTitle = styled.p`
   font-weight: 400;
   font-size: 2rem;
   line-height: 44px;
+  cursor: pointer;
 `;
 
 export const PostContent = styled.h3`
@@ -52,6 +58,7 @@ export const PostContent = styled.h3`
   max-height: calc(var(--lh) * var(--max-lines));
   overflow: hidden;
   padding-right: 1rem;
+  line-height: var(--lh);
 `;
 
 export const PostTagStyle = styled.ul`
@@ -59,7 +66,7 @@ export const PostTagStyle = styled.ul`
   list-style: none;
   display: flex;
   align-items: flex-start;
-  cursor: pointer;
+
   li {
     font-size: 13px;
     line-height: 16px;
@@ -68,5 +75,6 @@ export const PostTagStyle = styled.ul`
     padding: 8px;
     border-radius: 100px;
     margin-inline: 5px;
+    cursor: pointer;
   }
 `;

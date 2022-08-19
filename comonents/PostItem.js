@@ -47,8 +47,8 @@ const PostItem = () => {
         <section>
           <article>
             <div>
-              <PostDate>23 May</PostDate>
-              <PostAuthor>@aomuiz</PostAuthor>
+              <PostDate>23 Sept</PostDate>
+              <PostAuthor>@samurai</PostAuthor>
             </div>
             <div>
               <PostTitle>
@@ -63,7 +63,7 @@ const PostItem = () => {
               </PostContent>
               <PostTagStyle>
                 <li>#meditation</li>
-                <li>#mentalpeace</li>
+                <li>#react native</li>
               </PostTagStyle>
             </div>
           </article>
