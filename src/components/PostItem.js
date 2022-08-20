@@ -9,21 +9,21 @@ import {
   PostTagStyle,
 } from "../../styles/PostItemStyle";
 
-const PostItem = () => {
+const PostItem = ({ post }) => {
+  // console.log(post.tags);
   return (
     <>
-      <SectionNavStyle>Latest</SectionNavStyle>
-      <PostStyle>
-        <section>
-          <article>
-            <div>
-              <PostDate>23 May</PostDate>
-              <PostAuthor>@aomuiz</PostAuthor>
-            </div>
-            <div>
-              <PostTitle>
-                15 Disadvantages Of Freedom And How You Can Workaround It.
-              </PostTitle>
+      <section>
+        <article>
+          <div>
+            <PostDate>23 May</PostDate>
+            <PostAuthor>@{post.author}</PostAuthor>
+          </div>
+          <div>
+            <PostTitle>{post.title}</PostTitle>
+            {post.summary ? (
+              <PostContent>{post.summary}</PostContent>
+            ) : (
               <PostContent>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
@@ -35,40 +35,16 @@ const PostItem = () => {
                 ipsum dolor sit amet consectetur adipisicing elit. Cum,
                 pariatur.
               </PostContent>
-              <PostTagStyle>
-                <li>#meditation</li>
-                <li>#mentalpeace</li>
-              </PostTagStyle>
-            </div>
-          </article>
-        </section>
-      </PostStyle>
-      <PostStyle>
-        <section>
-          <article>
-            <div>
-              <PostDate>23 Sept</PostDate>
-              <PostAuthor>@samurai</PostAuthor>
-            </div>
-            <div>
-              <PostTitle>
-                15 Disadvantages Of Freedom And How You Can Workaround It.
-              </PostTitle>
-              <PostContent>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse.
-              </PostContent>
-              <PostTagStyle>
-                <li>#meditation</li>
-                <li>#react native</li>
-              </PostTagStyle>
-            </div>
-          </article>
-        </section>
-      </PostStyle>
+            )}
+
+            <PostTagStyle>
+              {post.tags.map((tag, i) => (
+                <li key={i}>#{tag}</li>
+              ))}
+            </PostTagStyle>
+          </div>
+        </article>
+      </section>
     </>
   );
 };
