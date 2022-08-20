@@ -1,6 +1,6 @@
 import Head from "next/head";
-import Nav from "../comonents/Nav";
-import PostItem from "../comonents/PostItem";
+import Nav from "../src/components/Nav";
+import PostItem from "../src/components/PostItem";
 import { Layout } from "../styles";
 
 export default function Home() {

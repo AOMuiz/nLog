@@ -1,5 +1,5 @@
 import React from "react";
-import { NavStyles, NavContainer } from "../styles/NavStyle";
+import { NavStyles, NavContainer } from "../../styles/NavStyle";
 import { AiOutlineTag, AiOutlineSearch } from "react-icons/ai";
 import { FiTrendingUp } from "react-icons/fi";
 

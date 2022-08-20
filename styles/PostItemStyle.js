@@ -25,7 +25,7 @@ export const SectionNavStyle = styled.h3`
 
 export const PostDate = styled.p`
   font-size: 2rem;
-  font-weight: 500;
+  font-weight: 600;
   text-align: right;
   line-height: 40px;
   /* margin-bottom: 14px; */

@@ -7,7 +7,7 @@ import {
   SectionNavStyle,
   PostContent,
   PostTagStyle,
-} from "../styles/PostItemStyle";
+} from "../../styles/PostItemStyle";
 
 const PostItem = () => {
   return (
