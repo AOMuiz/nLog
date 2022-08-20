@@ -1,20 +1,5 @@
 import styled from "styled-components";
 
-// import { device } from "./device";
-
-// const ProfilePage = styled.div`
-//   margin: auto;
-//   text-align: center;
-
-//   @media ${device.laptop} {
-//     max-width: 800px;
-//   }
-
-//   @media ${device.desktop} {
-//     max-width: 1400px;
-//   }
-// `;
-
 const sizes = {
   mobileS: "320px",
   mobileM: "375px",
@@ -40,13 +25,15 @@ export const Layout = styled.div`
   grid-template-columns: 15vw 1fr;
   grid-template-rows: 1fr;
   position: absolute;
+  main {
+    margin-top: 1rem;
+  }
+
   @media ${devices.tablet} {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 10vh;
-  }
 
-  nav {
-    @media ${devices.tablet} {
+    nav {
       grid-row: 2/-1;
       z-index: 5;
       justify-self: center;

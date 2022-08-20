@@ -13,6 +13,7 @@ export const NavContainer = styled.div`
     height: fit-content;
     top: 75vh;
     bottom: 0;
+    padding-inline: 1rem;
   }
 `;
 
@@ -35,6 +36,9 @@ export const NavStyles = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    @media ${devices.tablet} {
+      margin-block: 1rem;
+    }
   }
   ul {
     color: var(--default);
