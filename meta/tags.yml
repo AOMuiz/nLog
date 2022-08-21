@@ -11,3 +11,22 @@ tags:
     name: mdx
   - slug: markdown
     name: markdown
+  - slug: next-js
+    name: next-js
+  - slug: tailwind
+    name: tailwind
+  - slug: features
+    name: features
+  - slug: code
+    name: code
+  - slug: welcome
+    name: welcome
+  - slug: agreement
+    name: agreement
+  - slug: guide
+    name: guide
+# next-js
+#   - tailwind
+#   - code
+#   - features
+# #   - guide

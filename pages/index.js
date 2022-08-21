@@ -14,16 +14,6 @@ export default function Home({ posts, tags, pagination }) {
       <TwitterCardMeta url={"/"} />
       <main>
         <div>
-          {/* <div className="container">
-            <h1>
-              Hi, Welcome to my Digital Garden<span className="fancy">.</span>
-            </h1>
-            <span className="handle">@nLog-blog</span>
-            <h2>
-              Here i share insights about my personal and work life, and the
-              in-betweens
-            </h2>
-          </div> */}
           <PostList posts={posts} pagination={pagination} />
         </div>
         <style jsx>{`

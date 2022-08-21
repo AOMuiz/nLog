@@ -8,9 +8,11 @@ import {
   PostContent,
   PostTagStyle,
 } from "../../styles/PostItemStyle";
+import Link from "next/link";
+import { getTag } from "../lib/tags";
 
 const PostItem = ({ post }) => {
-  // console.log(post.tags);
+  console.log(post.tags);
   return (
     <>
       <section>
@@ -36,11 +38,20 @@ const PostItem = ({ post }) => {
                 pariatur.
               </PostContent>
             )}
-
             <PostTagStyle>
-              {post.tags.map((tag, i) => (
-                <li key={i}>#{tag}</li>
-              ))}
+              {post.tags.map((tagIt, i) => {
+                let tag = getTag(tagIt);
+                console.log(tag);
+                return (
+                  <Link
+                    key={i}
+                    href={"/posts/tags/[[...slug]]"}
+                    as={`/posts/tags/${tag?.slug}`}
+                  >
+                    <li>#{tag?.name}</li>
+                  </Link>
+                );
+              })}
             </PostTagStyle>
           </div>
         </article>
