@@ -22,7 +22,10 @@ const PostItem = ({ post }) => {
             <PostAuthor>@{post.author}</PostAuthor>
           </div>
           <div>
-            <PostTitle>{post.title}</PostTitle>
+            <Link href={"/posts/" + post.slug}>
+              <PostTitle>{post.title}</PostTitle>
+            </Link>
+
             {post.summary ? (
               <PostContent>{post.summary}</PostContent>
             ) : (

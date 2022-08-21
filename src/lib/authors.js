@@ -1,5 +1,7 @@
 import authors from "../../meta/authors.yml";
 
+const authorMap = generateAuthorMap();
+
 function generateAuthorMap() {
   let result = {};
   for (const author of authors.authors) {
@@ -7,6 +9,8 @@ function generateAuthorMap() {
   }
   return result;
 }
+
+console.log(authorMap);
 
 export function getAuthor() {
   return authorMap[slug];

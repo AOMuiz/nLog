@@ -1,13 +1,26 @@
-tags:
-  - slug: document
-    name: document
-  - slug: mock
-    name: mock
-  - slug: style
-    name: style
-  - slug: license
-    name: license
-  - slug: mdx
-    name: mdx
-  - slug: markdown
-    name: markdown
+authors:
+  - slug: wutali
+    name: Takahiro Fujiwara
+    introduction:
+      Co-founder and CTO at Fuller, Inc. / Software & Data Engineer /
+      Python / Golang / React
+  - slug: lukman
+    name: Abdulrauf Lukman
+    introduction:
+      Co-founder and CTO at Fuller, Inc. / Software & Data Engineer /
+      Python / Golang / React
+  - slug: aomuiz
+    name: Abdulwasiu Muiz
+    introduction:
+      Co-founder and CTO at Fuller, Inc. / Software & Data Engineer /
+      Python / Golang / React
+  - slug: opticrafts
+    name: opticrafts
+    introduction:
+      Co-founder and CTO at Fuller, Inc. / Software & Data Engineer /
+      Python / Golang / React
+  - slug: sparrow
+    name: sparrow Muiz
+    introduction:
+      Co-founder and CTO at Fuller, Inc. / Software & Data Engineer /
+      Python / Golang / React

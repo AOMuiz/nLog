@@ -13,8 +13,8 @@ export default function Index({ posts, tag, pagination, page }) {
   return (
     <>
       <BasicMeta url={url} title={`Tags-${title}`} />
-      <OpenGraphMeta url={url} title={title} />
-      <TwitterCardMeta url={url} title={title} />
+      <OpenGraphMeta url={url} title={`Tags-${title}`} />
+      <TwitterCardMeta url={url} title={`Tags-${title}`} />
       <TagPostList posts={posts} tag={tag} pagination={pagination} />
     </>
   );
