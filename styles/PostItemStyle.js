@@ -45,13 +45,14 @@ export const PostTitle = styled.p`
   color: var(--primary-color);
   font-style: normal;
   font-weight: 400;
-  font-size: 2rem;
+  /* fluid typography */
+  font-size: clamp(1.5rem, 2vw + 1rem, 3rem);
   line-height: 44px;
   cursor: pointer;
 `;
 
 export const PostContent = styled.h3`
-  font-size: 15px;
+  font-size: 0.9rem;
   font-weight: 400;
   /* clamp */
   position: relative;

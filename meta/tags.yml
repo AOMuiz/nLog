@@ -25,6 +25,8 @@ tags:
     name: agreement
   - slug: guide
     name: guide
+  - slug: github
+    name: github
 # next-js
 #   - tailwind
 #   - code

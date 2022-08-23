@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import styles from "../../public/styles/content.module.css";
 import Author from "./Author";
 import Copyright from "./Copyright";
@@ -7,11 +8,11 @@ import BasicMeta from "./meta/BasicMeta";
 import JsonLdMeta from "./meta/JsonLdMeta";
 import OpenGraphMeta from "./meta/OpenGraphMeta";
 import TwitterCardMeta from "./meta/TwitterCardMeta";
-// import { SocialList } from "./SocialList";
-// import TagButton from "./TagButton";
+import { devices } from "../../styles";
 import { getAuthor } from "../lib/authors";
-import { getTag } from "../lib/tags";
+import { PostTagStyle } from "../../styles/PostItemStyle";
 import { Layout } from "../../styles";
+import { getTag } from "../lib/tags";
 
 export default function PostLayout({
   title,
@@ -25,7 +26,7 @@ export default function PostLayout({
   const keywords = tags.map((it) => getTag(it).name);
   // const authorName = getAuthor(author).name;
   return (
-    <>
+    <main>
       <div className={"container"}>
         <BasicMeta
           url={`/posts/${slug}`}
@@ -59,37 +60,57 @@ export default function PostLayout({
               <div>
                 <Date date={date} />
               </div>
+              <div>
+                <Author author={author} />
+              </div>
               {/* <div>
                 <Author author={getAuthor(author)} />
               </div> */}
             </div>
           </header>
           <div className={styles.content}>{children}</div>
-          {/* <ul className={"tag-list"}>
-            {tags.map((it, i) => (
-              <li key={i}>
-                <TagButton tag={getTag(it)} />
-              </li>
-            ))}
-          </ul> */}
+          <PostTagStyle className={"tag-list"}>
+            {tags.map((tagIt, i) => {
+              let tag = getTag(tagIt);
+              // console.log(tag);
+              return (
+                <Link
+                  key={i}
+                  href={"/posts/tags/[[...slug]]"}
+                  as={`/posts/tags/${tag?.slug}`}
+                >
+                  <li>#{tag?.name}</li>
+                </Link>
+              );
+            })}
+          </PostTagStyle>
         </article>
       </div>
 
       <style jsx>
         {`
           .container {
-            // display: flex;
-            // justify-content: center;
-            // align-items: center;
-            max-width: 36rem;
+            max-width: 43rem;
             width: 100%;
             margin: 0 auto;
-            padding: 0 2.5rem;
+            padding: 0 2rem;
             box-sizing: border-box;
             z-index: 0;
           }
+          @media ${devices.tablet} {
+            .container {
+              max-width: 33rem;
+              padding: 0 1.5rem;
+            }
+          }
+          @media ${devices.mobileL} {
+            .container {
+              max-width: 25rem;
+              padding: 0 1rem;
+            }
+          }
           .metadata div {
-            display: inline-block;
+            // display: inline-block;
             margin-right: 0.5rem;
           }
           article {
@@ -108,6 +129,7 @@ export default function PostLayout({
             text-align: right;
             margin: 1.75rem 0 0 0;
             padding: 0;
+            justify-content: flex-end;
           }
           .tag-list li {
             display: inline-block;
@@ -124,9 +146,16 @@ export default function PostLayout({
           .content_content__ymYdh {
             color: var(--default);
           }
+
           .content_content__ymYdh blockquote::before {
             color: #22863a;
           }
+
+          // .content_content__ymydh p {
+          //   font-weight: 400;
+          //   font-size: 3rem;
+          //   line-height: 80px;
+          // }
 
           /* Syntax highlighting */
           .token.comment,
@@ -226,6 +255,6 @@ export default function PostLayout({
           }
         `}
       </style>
-    </>
+    </main>
   );
 }

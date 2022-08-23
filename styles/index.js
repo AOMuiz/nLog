@@ -24,7 +24,7 @@ export const Layout = styled.div`
   display: grid;
   grid-template-columns: 15vw 1fr;
   grid-template-rows: 1fr;
-  position: absolute;
+  position: relative;
   main {
     margin-top: 1rem;
   }
@@ -41,6 +41,7 @@ export const Layout = styled.div`
     }
     main {
       grid-row: 1/2;
+      margin-bottom: 3.5rem;
     }
   }
 `;

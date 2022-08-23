@@ -1,11 +1,22 @@
 import { format, formatISO } from "date-fns";
-import { PostDate } from "../../styles/PostItemStyle";
 
 export default function Date({ date }) {
   console.log(date);
   return (
-    <time dateTime={formatISO(date)}>
-      <PostDate>{format(date, "LLLL d, yyyy")}</PostDate>
-    </time>
+    <>
+      <time dateTime={formatISO(date)}>
+        <p>on {format(date, "d LLLL , yyyy")}</p>
+      </time>
+      <style jsx>
+        {`
+          p {
+            color: #a5a5a5;
+            font-weight: 200;
+            font-size: 1rem;
+            line-height: 20px;
+          }
+        `}
+      </style>
+    </>
   );
 }

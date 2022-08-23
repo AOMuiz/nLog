@@ -1,5 +1,7 @@
 // import renderToString from "next-mdx-remote/render-to-string";
 // import hydrate from "next-mdx-remote/hydrate";
+// import { rehype } from "rehype";
+import rehypeHighlight from "rehype-highlight";
 import remarkGfm from "remark-gfm";
 import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote } from "next-mdx-remote";
@@ -64,7 +66,10 @@ export const getStaticProps = async ({ params }) => {
   const mdxSource = await serialize(content, {
     components,
     scope: data,
-    mdxOptions: { remarkPlugins: [remarkGfm] },
+    mdxOptions: {
+      remarkPlugins: [remarkGfm],
+      rehypePlugins: [rehypeHighlight],
+    },
   });
   return {
     props: {

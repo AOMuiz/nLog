@@ -12,7 +12,7 @@ import Link from "next/link";
 import { getTag } from "../lib/tags";
 
 const PostItem = ({ post }) => {
-  console.log(post.tags);
+  // console.log(post.tags);
   return (
     <>
       <section>
@@ -44,7 +44,7 @@ const PostItem = ({ post }) => {
             <PostTagStyle>
               {post.tags.map((tagIt, i) => {
                 let tag = getTag(tagIt);
-                console.log(tag);
+                // console.log(tag);
                 return (
                   <Link
                     key={i}
