@@ -1,7 +1,7 @@
 // import renderToString from "next-mdx-remote/render-to-string";
 // import hydrate from "next-mdx-remote/hydrate";
 // import { rehype } from "rehype";
-import rehypeHighlight from "rehype-highlight";
+import rehypeCodeTitles from "rehype-code-titles";
 import remarkGfm from "remark-gfm";
 import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote } from "next-mdx-remote";
@@ -67,7 +67,7 @@ export const getStaticProps = async ({ params }) => {
     scope: data,
     mdxOptions: {
       remarkPlugins: [remarkGfm],
-      rehypePlugins: [rehypePrisma],
+      rehypePlugins: [rehypeCodeTitles, rehypePrisma],
     },
   });
   return {

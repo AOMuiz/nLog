@@ -10,10 +10,8 @@ import {
 } from "../../styles/PostItemStyle";
 import Link from "next/link";
 import { getTag } from "../lib/tags";
-
-{
-  /* <time dateTime={formatISO(post.date)}>{format(post.date, "LLL, d")}</time>; */
-}
+import { format, formatISO } from "date-fns";
+// import Date from "./Date";
 
 const PostItem = ({ post }) => {
   return (
@@ -21,7 +19,10 @@ const PostItem = ({ post }) => {
       <section>
         <article>
           <div>
-            <PostDate>23 May</PostDate>
+            <PostDate>
+              {/* <Date date={post.date} /> */}
+              {format(new Date(post.date), "d LLL")}
+            </PostDate>
             <PostAuthor>@{post.author}</PostAuthor>
           </div>
           <div>
