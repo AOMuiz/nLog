@@ -36,6 +36,7 @@ export const NavStyles = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
     @media ${devices.tablet} {
       margin-block: 1rem;
     }
@@ -63,12 +64,20 @@ export const NavStyles = styled.div`
         justify-content: space-between;
         padding-inline: 0.5rem;
       }
+      @media ${devices.mobileL} {
+        span {
+          display: none;
+        }
+      }
     }
     svg {
       color: var(--primary-color);
       display: block;
       font-size: 1.5rem;
       margin: 5px;
+      @media ${devices.mobileL} {
+        font-size: 1.7rem;
+      }
     }
   }
 `;

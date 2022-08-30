@@ -14,6 +14,7 @@ import PostLayout from "../../src/components/PostLayout";
 import InstagramEmbed from "react-instagram-embed";
 import YouTube from "react-youtube";
 import { TwitterTweetEmbed } from "react-twitter-embed";
+import rehypePrisma from "@mapbox/rehype-prism";
 
 const components = { InstagramEmbed, YouTube, TwitterTweetEmbed };
 const slugToPostContent = ((postContents) => {
@@ -68,7 +69,7 @@ export const getStaticProps = async ({ params }) => {
     scope: data,
     mdxOptions: {
       remarkPlugins: [remarkGfm],
-      rehypePlugins: [rehypeHighlight],
+      rehypePlugins: [rehypePrisma],
     },
   });
   return {

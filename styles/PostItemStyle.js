@@ -34,8 +34,9 @@ export const PostDate = styled.p`
 export const PostAuthor = styled.p`
   font-weight: 300;
   font-size: 1.2rem;
+  position: absolute;
   transform: rotate(-90deg);
-  padding: 1.5rem 2px;
+  padding: 1.2rem 2px;
   text-align: right;
   line-height: 20px;
 `;

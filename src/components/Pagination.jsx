@@ -21,18 +21,18 @@ export default function Pagination({ current, pages, link }) {
         ))}
         <style jsx>{`
           div {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            /* display: flex;
+            justify-content: flex-end;
+            align-items: center; */
             margin: 0 auto;
           }
           ul {
             list-style: none;
-            margin: 3rem 0 0 0;
+            margin: 2rem 0 0 0;
             padding: 0;
-            /* display: flex;
+            display: flex;
             justify-content: center;
-            align-items: center; */
+            align-items: center;
           }
           li {
             display: inline-block;
