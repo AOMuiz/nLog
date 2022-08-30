@@ -72,7 +72,6 @@ export default function PostLayout({
           <PostTagStyle className={"tag-list"}>
             {tags.map((tagIt, i) => {
               let tag = getTag(tagIt);
-              // console.log(tag);
               return (
                 <Link
                   key={i}

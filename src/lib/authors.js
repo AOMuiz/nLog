@@ -10,7 +10,7 @@ function generateAuthorMap() {
   return result;
 }
 
-console.log(authorMap);
+// console.log(authorMap);
 
 export function getAuthor() {
   return authorMap[slug];

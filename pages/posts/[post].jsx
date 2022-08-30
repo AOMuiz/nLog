@@ -33,8 +33,6 @@ export default function Post({
   source,
 }) {
   //   const content = hydrate(source, { components });
-  console.log(author);
-  console.log({ source });
   return (
     <PostLayout
       title={title}

@@ -1,7 +1,6 @@
 import { format, formatISO } from "date-fns";
 
 export default function Date({ date }) {
-  console.log(date);
   return (
     <>
       <time dateTime={formatISO(date)}>
@@ -12,7 +11,7 @@ export default function Date({ date }) {
           p {
             color: #a5a5a5;
             font-weight: 200;
-            font-size: 1rem;
+            font-size: 1.2rem;
             line-height: 20px;
           }
         `}

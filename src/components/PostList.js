@@ -4,7 +4,7 @@ import Pagination from "./Pagination";
 import { PostStyle, SectionNavStyle } from "../../styles/PostItemStyle";
 
 export default function PostList({ posts, tags, pagination }) {
-  console.log({ postList: posts });
+  // console.log({ postList: posts });
   return (
     <>
       <SectionNavStyle>Latest</SectionNavStyle>
