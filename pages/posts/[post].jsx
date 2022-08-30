@@ -34,17 +34,21 @@ export default function Post({
 }) {
   //   const content = hydrate(source, { components });
   return (
-    <PostLayout
-      title={title}
-      date={parseISO(dateString)}
-      slug={slug}
-      tags={tags}
-      author={author}
-      description={description}
-    >
-      <MDXRemote {...source} components={components} />
-      {/* {content} */}
-    </PostLayout>
+    <div>
+      <main>
+        <PostLayout
+          title={title}
+          date={parseISO(dateString)}
+          slug={slug}
+          tags={tags}
+          author={author}
+          description={description}
+        >
+          <MDXRemote {...source} components={components} />
+          {/* {content} */}
+        </PostLayout>
+      </main>
+    </div>
   );
 }
 

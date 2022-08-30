@@ -11,12 +11,14 @@ export default function Index({ posts, tag, pagination, page }) {
   const url = `/posts/tags/${tag.name}` + (page ? `/${page}` : "");
   const title = tag.name;
   return (
-    <>
+    <div>
       <BasicMeta url={url} title={`Tags-${title}`} />
       <OpenGraphMeta url={url} title={`Tags-${title}`} />
       <TwitterCardMeta url={url} title={`Tags-${title}`} />
-      <TagPostList posts={posts} tag={tag} pagination={pagination} />
-    </>
+      <main>
+        <TagPostList posts={posts} tag={tag} pagination={pagination} />
+      </main>
+    </div>
   );
 }
 

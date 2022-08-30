@@ -26,7 +26,7 @@ export default function PostLayout({
   const keywords = tags.map((it) => getTag(it).name);
   // const authorName = getAuthor(author).name;
   return (
-    <main>
+    <>
       <div className={"container"}>
         <BasicMeta
           url={`/posts/${slug}`}
@@ -105,7 +105,7 @@ export default function PostLayout({
             }
           }
           .artHeader {
-            border-bottom: 2px solid #6a737d;
+            border-bottom: 1.5px solid #6a737d;
           }
           @media ${devices.mobileL} {
             .container {
@@ -147,20 +147,21 @@ export default function PostLayout({
       </style>
       <style global jsx>
         {`
-          // .rehype-code-title {
-          //   border-top-left-radius: 0.25rem;
-          //   border-top-right-radius: 0.25rem;
-          //   --tw-bg-opacity: 1;
-          //   background-color: rgb(64 64 64 / var(--tw-bg-opacity));
-          //   padding: 0.75rem 1.25rem;
-          //   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
-          //     Liberation Mono, Courier New, monospace;
-          //   font-size: 0.875rem;
-          //   line-height: 1.25rem;
-          //   font-weight: 700;
-          //   --tw-text-opacity: 1;
-          //   color: rgb(229 229 229 / var(--tw-text-opacity));
-          // }
+          .rehype-code-title {
+            border-top-left-radius: 0.25rem;
+            border-top-right-radius: 0.25rem;
+            margin-top: 0.5rem;
+            --tw-bg-opacity: 1;
+            background-color: #393239;
+            // background-color: rgb(64 64 64 / var(--tw-bg-opacity));
+            padding: 0.75rem 1.25rem;
+            font-family: Monaco, Consolas, monospace;
+            font-size: 0.875rem;
+            line-height: 1.25rem;
+            font-weight: 700;
+            --tw-text-opacity: 1;
+            color: rgb(229 229 229 / var(--tw-text-opacity));
+          }
 
           .content_content__ymYdh {
             color: var(--default);
@@ -251,7 +252,7 @@ export default function PostLayout({
           /* Code blocks */
           pre[class*="language-"] {
             padding: 1em;
-            margin: 0.5em 0;
+            margin: 0.2em 0;
             overflow: auto;
           }
 
@@ -403,6 +404,6 @@ export default function PostLayout({
           }
         `}
       </style>
-    </main>
+    </>
   );
 }

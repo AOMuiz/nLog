@@ -24,7 +24,6 @@ export const Layout = styled.div`
   display: grid;
   grid-template-columns: 15vw 1fr;
   grid-template-rows: 1fr;
-  position: relative;
   main {
     margin-top: 1rem;
   }
@@ -32,16 +31,23 @@ export const Layout = styled.div`
   @media ${devices.tablet} {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 10vh;
+    /* width: max-content;
+    align-items: center; */
 
     nav {
       grid-row: 2/-1;
       z-index: 5;
       justify-self: center;
       width: 70vw;
+      margin: 0 auto;
     }
     main {
       grid-row: 1/2;
       margin-bottom: 3.5rem;
     }
   }
+
+  /* @media ${devices.mobileM} {
+    width: fit-content;
+  } */
 `;
