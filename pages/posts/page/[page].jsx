@@ -5,7 +5,6 @@ import PostList from "../../../src/components/PostList";
 import config from "../../../src/lib/config";
 import { countPosts, listPostContent } from "../../../src/lib/posts";
 import { listTags } from "../../../src/lib/tags";
-import { Layout } from "../../../styles";
 
 export default function Page({ posts, tags, pagination, page }) {
   const url = `/posts/page/${page}`;
