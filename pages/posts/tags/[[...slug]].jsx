@@ -5,7 +5,6 @@ import TagPostList from "../../../src/components/TagPostList";
 import config from "../../../src/lib/config";
 import { countPosts, listPostContent } from "../../../src/lib/posts";
 import { getTag, listTags } from "../../../src/lib/tags";
-import { Layout } from "../../../styles";
 
 export default function Index({ posts, tag, pagination, page }) {
   const url = `/posts/tags/${tag.name}` + (page ? `/${page}` : "");

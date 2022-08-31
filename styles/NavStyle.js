@@ -59,6 +59,7 @@ export const NavStyles = styled.div`
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      cursor: pointer;
       @media ${devices.tablet} {
         flex-direction: row;
         justify-content: space-between;

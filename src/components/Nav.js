@@ -21,10 +21,12 @@ const Nav = () => {
             <FiTrendingUp />
             <span>Trending</span>
           </li>
-          <li>
-            <AiOutlineTag />
-            <span>Tags</span>
-          </li>
+          <Link href={"/tags"}>
+            <li>
+              <AiOutlineTag />
+              <span>Tags</span>
+            </li>
+          </Link>
         </ul>
       </NavStyles>
     </NavContainer>

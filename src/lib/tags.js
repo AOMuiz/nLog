@@ -1,6 +1,6 @@
 import tags from "../../meta/tags.yml";
 
-const tagMap = generateTagMap();
+export const tagMap = generateTagMap();
 
 function generateTagMap() {
   let result = {};
