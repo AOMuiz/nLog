@@ -3,6 +3,9 @@ import { devices } from ".";
 
 export const PostStyle = styled.div`
   margin: 1.5rem 3rem;
+  @media ${devices.mobileL} {
+    margin-inline: 1.7rem;
+  }
   section {
     color: var(--default);
   }
@@ -10,6 +13,10 @@ export const PostStyle = styled.div`
     display: grid;
     grid-template-columns: 4rem 1fr;
     gap: 2rem;
+    @media ${devices.mobileL} {
+      grid-template-columns: 1fr;
+      gap: 0.5rem;
+    }
   }
 `;
 
@@ -21,6 +28,16 @@ export const SectionNavStyle = styled.h3`
   border-top: 2px solid var(--primary-color);
   font-weight: 400;
   display: inline-block;
+  @media ${devices.mobileL} {
+    margin-left: 1rem;
+  }
+`;
+
+export const PostDateContainer = styled.div`
+  @media ${devices.mobileL} {
+    display: flex;
+    justify-content: space-between;
+  }
 `;
 
 export const PostDate = styled.p`
@@ -28,7 +45,11 @@ export const PostDate = styled.p`
   font-weight: 600;
   text-align: right;
   line-height: 40px;
-  /* margin-bottom: 14px; */
+  @media ${devices.mobileL} {
+    font-weight: 300;
+    line-height: 20px;
+    font-size: 1rem;
+  }
 `;
 
 export const PostAuthor = styled.p`
@@ -39,6 +60,12 @@ export const PostAuthor = styled.p`
   padding: 1.2rem 2px;
   text-align: right;
   line-height: 20px;
+  @media ${devices.mobileL} {
+    transform: rotate(0deg);
+    position: static;
+    font-size: 1rem;
+    padding: 0;
+  }
 `;
 
 export const PostTitle = styled.p`
@@ -50,6 +77,11 @@ export const PostTitle = styled.p`
   font-size: clamp(1.5rem, 2vw + 1rem, 3rem);
   line-height: 44px;
   cursor: pointer;
+
+  @media ${devices.mobileL} {
+    line-height: 30px;
+    margin-top: 0;
+  }
 `;
 
 export const PostContent = styled.h3`
@@ -61,6 +93,9 @@ export const PostContent = styled.h3`
   overflow: hidden;
   padding-right: 1rem;
   line-height: var(--lh);
+  @media ${devices.mobileL} {
+    padding-right: 0;
+  }
 `;
 
 export const PostTagStyle = styled.ul`

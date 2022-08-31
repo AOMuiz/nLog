@@ -7,6 +7,7 @@ import {
   SectionNavStyle,
   PostContent,
   PostTagStyle,
+  PostDateContainer,
 } from "../../styles/PostItemStyle";
 import Link from "next/link";
 import { getTag } from "../lib/tags";
@@ -18,13 +19,10 @@ const PostItem = ({ post }) => {
     <>
       <section>
         <article>
-          <div>
-            <PostDate>
-              {/* <Date date={post.date} /> */}
-              {format(new Date(post.date), "d LLL")}
-            </PostDate>
+          <PostDateContainer>
+            <PostDate>{format(new Date(post.date), "d LLL")}</PostDate>
             <PostAuthor>@{post.author}</PostAuthor>
-          </div>
+          </PostDateContainer>
           <div>
             <Link href={"/posts/" + post.slug}>
               <PostTitle>{post.title}</PostTitle>
