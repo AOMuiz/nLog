@@ -5,11 +5,11 @@ import OpenGraphMeta from "../../src/components/meta/OpenGraphMeta";
 import TwitterCardMeta from "../../src/components/meta/TwitterCardMeta";
 import TagLink from "../../src/components/TagLink";
 import { getTag, listTags } from "../../src/lib/tags";
+import { devices } from "../../styles";
 
 const Index = ({ tags, postCount }) => {
   const url = `/tags/`;
   const title = "All Tags";
-  console.log({ tags, postCount });
 
   return (
     <div>
@@ -35,7 +35,12 @@ const Index = ({ tags, postCount }) => {
             flex-wrap: wrap;
             margin: 0 auto;
             padding: 1rem 4rem;
-            height: 100%;
+            height: max-content;
+          }
+          @media ${devices.tablet} {
+            .tagsList {
+              padding: 1rem 2rem;
+            }
           }
           .tagContainer {
             font-size: 1.7rem;
