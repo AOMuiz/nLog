@@ -1,0 +1,77 @@
+---
+slug: "read-time-feature-for-react-markdown-blog"
+title: Read Time Feature For React + Markdown Blog
+date: 2022-06-10
+author: AOMuiz
+tags:
+  - javascript
+category: Snippet
+---
+
+## Markdown Content
+
+For those unfamiliar with Markdown, it is basically text with a few special characters to help format the output. It is popular for blogs and other online text inputs because the content creator can easily add headings, links, images and more without having to develop a full blown website. Programs called parsers process the Markdown and output HTML.
+
+The following is a short excerpt to illustrate the syntax.
+
+```md
+# Heading
+
+## Sub Heading
+
+**Bold Text**
+
+- List Item
+- List Item
+- List Item
+
+[A link to somewhere](https://somewhere.com)
+
+Most text is just unformatted paragraph text.
+```
+
+## Read Time Function
+
+The end goal, or output, of the read time function is the number of minutes it will take to read the post.
+
+I am using the average reader's words per minute (WPM) found in the Medium article I cited earlier. This value is 275, which I divide by 60, since we need to account for images using the seconds unit.
+
+```js:readTime.js
+export default function readTime(content) {
+  const WPS = 275 / 60;
+
+  var images = 0;
+  const regex = /\w/;
+
+  let words = content.split(" ").filter((word) => {
+    if (word.includes("<img")) {
+      images += 1;
+    }
+    return regex.test(word);
+  }).length;
+
+  var imageAdjust = images * 4;
+  var imageSecs = 0;
+  var imageFactor = 12;
+
+  while (images) {
+    imageSecs += imageFactor;
+    if (imageFactor > 3) {
+      imageFactor -= 1;
+    }
+    images -= 1;
+  }
+
+  const minutes = Math.ceil(((words - imageAdjust) / WPS + imageSecs) / 60);
+
+  return minutes;
+}
+```
+
+My basic approach was to split the raw text on each space and then filter out anything that doesn't consist of letters or numbers. This prevents the Markdown syntax, spaces, and other non words from being counted. I accomplish this with JavaScript's built in Regular Expression feature.
+
+The character class <code>\w</code> represents <code>[a-zA-Z0-9_]</code>, and the <code>RegExp.prototype.test()</code> method is used to filter any string that does not contain an alphanumeric character.
+
+While the filtering is happening, I also count the <code>img</code> HTML tags. This allows for the proceeding <code>while</code> loop that adds up <code>imageSecs</code> , or the number of extra seconds estimated to view images based on the aforementioned logic. I also subtract 5 words for each image to account for the <code>src, alt, </code> and <code>img</code> tag itself.
+
+Finally, everything comes together to solve for minutes. This is the estimated read time which is attached to the post object and displayed at the top of each post.

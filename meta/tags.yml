@@ -27,3 +27,5 @@ tags:
     name: guide
   - slug: github
     name: github
+  - slug: javascript
+    name: javascript
