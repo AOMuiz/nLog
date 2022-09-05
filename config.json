@@ -4,13 +4,25 @@
   "site_description": "Salafi Developers blog",
   "site_keywords": [
     {
-      "keyword": "Next.js"
+      "keyword": "Programming"
     },
     {
-      "keyword": "Netlify"
+      "keyword": "Web Development"
+    },
+    {
+      "keyword": "Tutorials"
+    },
+    {
+      "keyword": "Javascript"
     },
     {
       "keyword": "React"
+    },
+    {
+      "keyword": "React Native"
+    },
+    {
+      "keyword": "FrontEnd"
     }
   ],
   "posts_per_page": 5,
