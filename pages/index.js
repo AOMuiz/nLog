@@ -7,6 +7,7 @@ import OpenGraphMeta from "../src/components/meta/OpenGraphMeta";
 import TwitterCardMeta from "../src/components/meta/TwitterCardMeta";
 
 export default function Home({ posts, tags, pagination }) {
+  const title = "Latest";
   return (
     <div>
       <BasicMeta url={"/"} />
@@ -14,7 +15,11 @@ export default function Home({ posts, tags, pagination }) {
       <TwitterCardMeta url={"/"} />
       <main>
         <div>
-          <PostList posts={posts} pagination={pagination} />
+          <PostList
+            posts={posts}
+            pagination={pagination}
+            sectionTitle={title}
+          />
         </div>
       </main>
       {/* <footer>Footer</footer> */}

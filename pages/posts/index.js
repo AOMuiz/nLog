@@ -14,7 +14,12 @@ export default function Index({ posts, tags, pagination }) {
       <BasicMeta url={url} title={title} />
       <OpenGraphMeta url={url} title={title} />
       <TwitterCardMeta url={url} title={title} />
-      <PostList posts={posts} tags={tags} pagination={pagination} />;
+      <PostList
+        posts={posts}
+        tags={tags}
+        pagination={pagination}
+        sectionTitle={title}
+      />
     </main>
   );
 }

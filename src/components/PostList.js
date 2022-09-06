@@ -3,11 +3,11 @@ import PostItem from "./PostItem";
 import Pagination from "./Pagination";
 import { PostStyle, SectionNavStyle } from "../../styles/PostItemStyle";
 
-export default function PostList({ posts, tags, pagination }) {
+export default function PostList({ posts, tags, pagination, sectionTitle }) {
   // console.log({ postList: posts });
   return (
     <>
-      <SectionNavStyle>Latest</SectionNavStyle>
+      <SectionNavStyle>{sectionTitle}</SectionNavStyle>
       <div>
         <PostStyle>
           {posts.map((it, i) => (
