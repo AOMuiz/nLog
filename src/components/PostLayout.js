@@ -13,6 +13,7 @@ import { getAuthor } from "../lib/authors";
 import { PostTagStyle } from "../../styles/PostItemStyle";
 import { Layout } from "../../styles";
 import { getTag } from "../lib/tags";
+import ReadingBar from "./ReadingBar";
 
 export default function PostLayout({
   title,
@@ -22,12 +23,13 @@ export default function PostLayout({
   tags,
   description = "",
   children,
+  readTime,
 }) {
   const keywords = tags.map((it) => getTag(it).name);
   // const authorName = getAuthor(author).name;
   return (
     <>
-      <div className={"container"}>
+      <div className={"container"} id={"container"}>
         <BasicMeta
           url={`/posts/${slug}`}
           title={title}
@@ -54,11 +56,32 @@ export default function PostLayout({
         />
 
         <article>
+          {/* <ReadingBar /> */}
           <header className={"artHeader"}>
             <h1>{title}</h1>
             <div className={"metadata"}>
-              <div>
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  padding: 0,
+                  color: "#a5a5a5",
+                  fontWeight: 200,
+                  fontSize: "1rem",
+                  lineHeight: "20px",
+                }}
+              >
                 <Date date={date} />
+                <span
+                  style={{
+                    marginLeft: "3px",
+                    marginRight: "3px",
+                    fontSize: "2rem",
+                  }}
+                >
+                  {"\u00B7"}
+                </span>
+                <span style={{ paddingInline: "7px" }}>{readTime.text}</span>
               </div>
               <div>
                 <Author author={author} />

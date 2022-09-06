@@ -15,6 +15,7 @@ import InstagramEmbed from "react-instagram-embed";
 import YouTube from "react-youtube";
 import { TwitterTweetEmbed } from "react-twitter-embed";
 import rehypePrisma from "@mapbox/rehype-prism";
+import readingTime from "reading-time";
 
 const components = { InstagramEmbed, YouTube, TwitterTweetEmbed };
 const slugToPostContent = ((postContents) => {
@@ -31,8 +32,10 @@ export default function Post({
   author,
   description = "",
   source,
+  time,
 }) {
   //   const content = hydrate(source, { components });
+  // console.log(time);
   return (
     <div>
       <main>
@@ -43,6 +46,7 @@ export default function Post({
           tags={tags}
           author={author}
           description={description}
+          readTime={time}
         >
           <MDXRemote {...source} components={components} />
           {/* {content} */}
@@ -66,6 +70,7 @@ export const getStaticProps = async ({ params }) => {
   const { content, data } = matter(source, {
     engines: { yaml: (s) => yaml.load(s, { schema: yaml.JSON_SCHEMA }) },
   });
+  const readTime = readingTime(source);
   const mdxSource = await serialize(content, {
     components,
     scope: data,
@@ -83,6 +88,7 @@ export const getStaticProps = async ({ params }) => {
       tags: data.tags,
       author: data.author,
       source: mdxSource,
+      time: readTime,
     },
   };
 };

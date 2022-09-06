@@ -4,14 +4,14 @@ export default function Date({ date }) {
   return (
     <>
       <time dateTime={formatISO(date)}>
-        <p>on {format(date, "d LLLL , yyyy")}</p>
+        <span>on {format(date, "d LLLL, yyyy")}</span>
       </time>
       <style jsx>
         {`
-          p {
+          span {
             color: #a5a5a5;
             font-weight: 200;
-            font-size: 1.2rem;
+            font-size: 1rem;
             line-height: 20px;
           }
         `}
