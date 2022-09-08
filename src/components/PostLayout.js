@@ -186,14 +186,6 @@ export default function PostLayout({
             color: rgb(229 229 229 / var(--tw-text-opacity));
           }
 
-          .content_content__ymYdh {
-            color: var(--default);
-          }
-
-          .content_content__ymYdh blockquote::before {
-            color: #22863a;
-          }
-
           /* Syntax highlighting */
           .token.comment,
           .token.prolog,

@@ -1,5 +1,5 @@
 .content {
-  color: #222;
+  color: var(--default);
   font-weight: 200;
 }
 
@@ -70,6 +70,7 @@
 .content blockquote {
   margin: 0 1rem;
   border-left-color: #393737;
+  isolation: isolate;
 }
 
 .content blockquote::before {
