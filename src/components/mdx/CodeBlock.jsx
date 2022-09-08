@@ -55,6 +55,9 @@ export default function CodeBlock({ children }) {
           .code-block {
             position: relative;
           }
+          pre {
+            margin-top: 0;
+          }
           .copy {
             cursor: pointer;
             position: absolute;
