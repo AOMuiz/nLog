@@ -7,15 +7,12 @@ import matter from "gray-matter";
 import fs from "fs";
 import yaml from "js-yaml";
 import { parseISO } from "date-fns";
-import { fetchPostContent } from "../../src/lib/posts";
 import readingTime from "reading-time";
 
+import { fetchPostContent } from "../../src/lib/posts";
 import PostLayout from "../../src/components/PostLayout";
 
 // mdx components
-import InstagramEmbed from "react-instagram-embed";
-import YouTube from "react-youtube";
-import { TwitterTweetEmbed } from "react-twitter-embed";
 import mdxComponents from "../../src/components/mdx/MDXComponents";
 
 // mdx plugins
@@ -29,18 +26,8 @@ import remarkSlug from "remark-slug";
 import remarkSmartypants from "@silvenon/remark-smartypants";
 import remarkTableofContents from "remark-toc";
 import remarkUnwrapImages from "remark-unwrap-images";
-import CodeBlock from "../../src/components/mdx/CodeBlock";
-import CustomLink from "../../src/components/mdx/Link";
-// import Image from "../../src/components/mdx/Image";
 
-const components = {
-  InstagramEmbed,
-  YouTube,
-  TwitterTweetEmbed,
-  pre: CodeBlock,
-  a: CustomLink,
-  // img: Image,
-};
+const components = mdxComponents;
 
 const slugToPostContent = ((postContents) => {
   let hash = {};
@@ -59,7 +46,6 @@ export default function Post({
   time,
 }) {
   //   const content = hydrate(source, { components });
-  // console.log(time);
   return (
     <div>
       <main>
