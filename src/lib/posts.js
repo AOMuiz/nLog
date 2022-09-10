@@ -30,8 +30,6 @@ export function fetchPostContent() {
       matterData.fullPath = fullPath;
 
       const slug = fileName.replace(/\.mdx$/, "");
-      // console.log({ slug });
-      // console.log({ matterData: matterData.slug });
 
       // Validate slug string
       if (matterData.slug !== slug) {
@@ -63,4 +61,20 @@ export function listPostContent(page, limit, tag) {
   return fetchPostContent()
     .filter((it) => !tag || (it.tags && it.tags.includes(tag)))
     .slice((page - 1) * limit, page * limit);
+}
+
+export function searchPost() {
+  // convert frontmatter to json
+  const frontmatter = fetchPostContent();
+  // convert json data into string
+  const jsonString = JSON.stringify(frontmatter);
+  // write a search.json file
+  fs.writeFileSync("./search.json", jsonString, (err) => {
+    if (err) {
+      console.log("Error writing file", err);
+    } else {
+      console.log("Successfully wrote file");
+    }
+  });
+  return jsonString;
 }

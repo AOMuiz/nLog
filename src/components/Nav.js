@@ -13,10 +13,13 @@ const Nav = () => {
         </Link>
 
         <ul>
-          <li>
-            <AiOutlineSearch />
-            <span>Search</span>
-          </li>
+          <Link href={"/search"}>
+            <li>
+              <AiOutlineSearch />
+              <span>Search</span>
+            </li>
+          </Link>
+
           <li>
             <FiTrendingUp />
             <span>Trending</span>
