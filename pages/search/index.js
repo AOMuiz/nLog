@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { fetchPostContent, searchPost } from "../../src/lib/posts";
 import { PostTitle, SectionNavStyle } from "../../styles/PostItemStyle";
+import Link from "next/link";
 
 const Index = ({ posts }) => {
   const [searchValue, setSearchValue] = useState("");
@@ -52,10 +53,17 @@ const Index = ({ posts }) => {
         <div>
           {!filteredBlogPosts.length && "No posts found."}
           {post &&
-            post.map((it) => <PostTitle key={it.slug}>{it.title}</PostTitle>)}
+            post.map((it) => (
+              <Link key={it.slug} href={`/posts/${it.slug}`}>
+                <PostTitle>{it.title}</PostTitle>
+              </Link>
+            ))}
         </div>
         <style jsx>
           {`
+            main {
+              height: 100%;
+            }
             .container {
               max-width: 100%;
               margin-inline: 3rem;
