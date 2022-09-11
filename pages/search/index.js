@@ -10,17 +10,17 @@ const Index = ({ posts }) => {
   let filteredBlogPosts = posts.filter((frontMatter) => {
     const searchContent = frontMatter.title;
     let result = searchValue.toLowerCase() === searchContent.toLowerCase();
-    console.log({
-      frontm: frontMatter.title,
-      searchValue,
-      result,
-    });
+    // console.log({
+    //   frontm: frontMatter.title,
+    //   searchValue,
+    //   result,
+    // });
     return result;
   });
 
   useEffect(() => {
     setPost(filteredBlogPosts);
-    console.log({ posts, post, filteredBlogPosts });
+    // console.log({ posts, post, filteredBlogPosts });
   }, [searchValue]);
 
   return (
@@ -62,8 +62,7 @@ const Index = ({ posts }) => {
         <style jsx>
           {`
             main {
-              height: 100%;
-              display: flex;
+              height: max-content;
             }
             .container {
               max-width: 100%;
