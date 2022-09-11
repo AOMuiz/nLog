@@ -63,6 +63,7 @@ const Index = ({ posts }) => {
           {`
             main {
               height: 100%;
+              display: flex;
             }
             .container {
               max-width: 100%;
