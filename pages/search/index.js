@@ -2,26 +2,39 @@ import React, { useEffect, useState } from "react";
 import { fetchPostContent, searchPost } from "../../src/lib/posts";
 import { PostTitle, SectionNavStyle } from "../../styles/PostItemStyle";
 import Link from "next/link";
+import Fuse from "fuse.js";
 
 const Index = ({ posts }) => {
   const [searchValue, setSearchValue] = useState("");
   const [post, setPost] = useState([]);
-
-  let filteredBlogPosts = posts.filter((frontMatter) => {
-    const searchContent = frontMatter.title;
-    let result = searchValue.toLowerCase() === searchContent.toLowerCase();
-    // console.log({
-    //   frontm: frontMatter.title,
-    //   searchValue,
-    //   result,
-    // });
-    return result;
+  const sortedSearchResults = post.sort((resultA, resultB) => {
+    return resultA.score - resultB.score;
   });
 
-  useEffect(() => {
-    setPost(filteredBlogPosts);
-    // console.log({ posts, post, filteredBlogPosts });
-  }, [searchValue]);
+  // let filteredBlogPosts = posts.filter((frontMatter) => {
+  //   const searchContent = frontMatter.title;
+  //   let result = searchValue.toLowerCase() === searchContent.toLowerCase();
+  //   return result;
+  // });
+
+  const fuse = new Fuse(posts, {
+    includeScore: true,
+    minMatchCharLength: 3,
+    threshold: 0.2,
+    keys: ["title"],
+  });
+
+  const handleSearch = (searchValue) => {
+    setSearchValue(searchValue);
+    const results = fuse.search(searchValue);
+    setPost(results);
+  };
+
+  // console.log({ fuse, sortedSearchResults, post });
+
+  // useEffect(() => {
+  //   setPost(filteredBlogPosts);
+  // }, [searchValue]);
 
   return (
     <main>
@@ -33,7 +46,7 @@ const Index = ({ posts }) => {
             type="search"
             value={searchValue}
             placeholder="Search blog posts"
-            onChange={(e) => setSearchValue(e.target.value)}
+            onChange={(e) => handleSearch(e.target.value)}
           />
           <svg
             className="text-gray-400 dark:text-gray-300"
@@ -51,11 +64,20 @@ const Index = ({ posts }) => {
           </svg>
         </div>
         <div>
-          {!filteredBlogPosts.length && "No posts found."}
-          {post &&
-            post.map((it) => (
+          {!sortedSearchResults.length && (
+            <p
+              style={{
+                color: "white",
+                fontSize: "2rem",
+              }}
+            >
+              No posts found.
+            </p>
+          )}
+          {sortedSearchResults &&
+            sortedSearchResults.map((it) => (
               <Link key={it.slug} href={`/posts/${it.slug}`}>
-                <PostTitle>{it.title}</PostTitle>
+                <PostTitle>{it.item.title}</PostTitle>
               </Link>
             ))}
         </div>
