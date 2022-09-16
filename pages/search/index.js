@@ -76,7 +76,7 @@ const Index = ({ posts }) => {
           )}
           {sortedSearchResults &&
             sortedSearchResults.map((it) => (
-              <Link key={it.item.slug} href={`/posts/${it.slug}`}>
+              <Link key={it.item.slug} href={`/posts/${it.item.slug}`}>
                 <PostTitle>{it.item.title}</PostTitle>
               </Link>
             ))}
