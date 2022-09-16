@@ -20,7 +20,7 @@ const Index = ({ posts }) => {
   const fuse = new Fuse(posts, {
     includeScore: true,
     minMatchCharLength: 3,
-    threshold: 0.2,
+    threshold: 0.4,
     keys: ["title"],
   });
 
@@ -76,7 +76,7 @@ const Index = ({ posts }) => {
           )}
           {sortedSearchResults &&
             sortedSearchResults.map((it) => (
-              <Link key={it.slug} href={`/posts/${it.slug}`}>
+              <Link key={it.item.slug} href={`/posts/${it.slug}`}>
                 <PostTitle>{it.item.title}</PostTitle>
               </Link>
             ))}
