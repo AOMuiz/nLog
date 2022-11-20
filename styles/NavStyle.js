@@ -8,11 +8,11 @@ export const NavContainer = styled.div`
   padding-inline: 2rem;
   position: fixed;
   top: 0;
+  bottom: 0;
   @media ${devices.tablet} {
     border: 1px solid var(--primary-color);
     height: fit-content;
     top: 80vh;
-    bottom: 0;
     padding-inline: 1rem;
   }
 `;

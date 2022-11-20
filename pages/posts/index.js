@@ -10,7 +10,7 @@ export default function Index({ posts, tags, pagination }) {
   const url = "/posts";
   const title = "All posts";
   return (
-    <main>
+    <div>
       <BasicMeta url={url} title={title} />
       <OpenGraphMeta url={url} title={title} />
       <TwitterCardMeta url={url} title={title} />
@@ -20,7 +20,7 @@ export default function Index({ posts, tags, pagination }) {
         pagination={pagination}
         sectionTitle={title}
       />
-    </main>
+    </div>
   );
 }
 

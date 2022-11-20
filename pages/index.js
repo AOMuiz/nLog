@@ -13,7 +13,7 @@ export default function Home({ posts, tags, pagination }) {
       <BasicMeta url={"/"} />
       <OpenGraphMeta url={"/"} />
       <TwitterCardMeta url={"/"} />
-      <main>
+      <>
         <div>
           <PostList
             posts={posts}
@@ -21,7 +21,7 @@ export default function Home({ posts, tags, pagination }) {
             sectionTitle={title}
           />
         </div>
-      </main>
+      </>
       {/* <footer>Footer</footer> */}
     </div>
   );
